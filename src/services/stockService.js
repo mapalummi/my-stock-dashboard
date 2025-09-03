@@ -10,7 +10,6 @@ const order = [
   "Sep 22",
   "Dec 22",
   "Mar 23",
-  '""',
   "3 Aug 23",
   "2 Nov 23",
   "1 Feb 24",
@@ -18,8 +17,8 @@ const order = [
   "1 Aug 24",
   "31 Oct 24",
   "30 Jan 25",
-  "31 Jul 25",
   "1 May 25",
+  "31 Jul 25",
 ];
 
 class StockService {
