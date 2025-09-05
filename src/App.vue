@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BaseCard from "./components/Card.vue";
+import BaseCard from "./components/Basecard.vue";
 import { stockService } from "@/services/stockService";
 
 export default {

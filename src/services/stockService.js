@@ -38,10 +38,19 @@ class StockService {
     }
   }
 
+  // async getRevenue(sheetName) {
+  //   const data = await this.fetchData(sheetName);
+  //   return order.map(key => data[3][key]);
+  // }
+
+  // NEUE VERSION
   async getRevenue(sheetName) {
     const data = await this.fetchData(sheetName);
-    return order.map(key => data[3][key]);
+    const row = Array.isArray(data) ? data[3] : undefined;
+    if (!row) return [];
+    return order.map(key => row[key] ?? null);
   }
+
 }
 
 export const stockService = new StockService();
