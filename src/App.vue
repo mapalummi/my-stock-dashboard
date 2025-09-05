@@ -1,15 +1,6 @@
 <template>
   <div class="dashboard-container">
-    <BaseCard title="Revenues Q1 2024" class="top-row-card">
-      <div class="revenue-tickers">
-        <RevenueCard variant="square" symbol="$AAPL" />
-        <RevenueCard variant="square" symbol="$META" />
-        <RevenueCard variant="square" symbol="$MSFT" />
-        <RevenueCard variant="square" symbol="$GOOG" />
-        <RevenueCard variant="square" symbol="$AMZN" />
-        <RevenueCard variant="square" symbol="$TSLA" />
-      </div>
-    </BaseCard>
+    <RevenueTickersCard class="top-row-card" />
 
     <div class="middle-row">
       <RevenueCard variant="square" symbol="$AAPL" class="revenue-history-card" />
@@ -26,6 +17,7 @@
 
 <script>
 import { stockService } from "@/services/stockService";
+import RevenueTickersCard from "./components/RevenueTickersCard.vue";
 import RevenueCard from "@/components/RevenueCard.vue";
 import RevenueBreakdownCard from "./components/RevenueBreakdownCard.vue";
 import NetIncomeCard from "./components/NetIncomeCard.vue";
@@ -35,6 +27,7 @@ import RevenueGrowthCard from "./components/RevenueGrowthCard.vue";
 export default {
   name: "App",
   components: {
+    RevenueTickersCard,
     RevenueCard,
     RevenueBreakdownCard,
     NetIncomeCard,
@@ -58,7 +51,6 @@ body {
   padding: 100px;
   background: radial-gradient(71.11% 100% at 50% 0%, #020204 14.6%, #011f35 100%);
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -75,28 +67,19 @@ body {
   width: 100%;
 }
 
-.revenue-tickers {
-  display: flex;
-  gap: 16px;
-}
 
-.revenue-tickers > .card {
-  flex: 1;
-  min-width: 150px; /* Optional: Setze eine Mindestbreite, damit sie nicht zu klein werden */
-}
-
-/* Mittlere Reihe: 70/30 Aufteilung */
+/* Middle row: 70/30 split */
 .middle-row {
   display: flex;
   gap: 16px;
 }
 
 .middle-row .revenue-history-card {
-  flex: 7; /* Karte nimmt 70% der verfügbaren Breite ein */
+  flex: 7; /* Card takes 70% of available width */
 }
 
 .middle-row .magnificent-seven-card {
-  flex: 3; /* Karte nimmt 30% der verfügbaren Breite ein */
+  flex: 3; /* Card takes 30% of available width */
 }
 
 .bottom-row {
@@ -105,7 +88,7 @@ body {
 }
 
 .bottom-row .net-income-card {
-  flex: 4; /* Beispiel: Die ersten beiden Karten nehmen zusammen so viel Platz ein wie die 70% der mittleren Reihe */
+  flex: 4; /* Example: First two cards take as much space as 70% of middle row */
 }
 
 .bottom-row .gross-margin-card {
@@ -113,6 +96,6 @@ body {
 }
 
 .bottom-row .revenue-growth-card {
-  flex: 3; /* Diese Karte nimmt so viel Platz ein wie die 30% der mittleren Reihe */
+  flex: 3; /* This card takes as much space as 30% of middle row */
 }
 </style>

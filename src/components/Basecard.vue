@@ -50,12 +50,6 @@ export default {
   max-width: 100%;
 }
 
-/* Hover-Effekt */
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
 .card-header h2 {
   margin: 0 0 1rem;
   font-size: 1.25rem;
