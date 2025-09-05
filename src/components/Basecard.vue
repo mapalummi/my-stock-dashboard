@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="variantClass">
     <div v-if="title || $slots.header" class="card-header">
       <slot name="header">
         <h2>{{ title }}</h2>
@@ -24,7 +24,16 @@ export default {
       type: String,
       default: "",
     },
+    variant: { type: String, default: "default" },
   },
+  computed: {
+    variantClass() {
+      return {
+        "card--full": this.variant === "full",
+        "card--square": this.variant === "square",
+      };
+  },
+},
 };
 </script>
 
@@ -64,5 +73,17 @@ export default {
 .card-footer {
   margin-top: 1rem;
   text-align: right;
+}
+
+/* Varianten */
+.card--full {
+  width: 100%;
+}
+
+.card--square {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-height: 250px;
+  overflow: auto;
 }
 </style>
