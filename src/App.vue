@@ -1,6 +1,10 @@
 <template>
   <div class="dashboard-container">
-    <RevenueTickersCard class="top-row-card" />
+
+    <div class="top-row">
+      <RevenueTickersCard  />
+    </div>
+    
 
     <div class="middle-row">
       <RevenueCard variant="square" symbol="$AAPL" class="revenue-history-card" />
@@ -63,8 +67,14 @@ body {
   width: 100%;
 }
 
-.top-row-card {
+.top-row {
+  display: flex;
+  gap: 16px;
+}
+
+.top-row .top-row-card {
   width: 100%;
+  overflow: hidden;
 }
 
 

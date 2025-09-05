@@ -54,19 +54,21 @@ export default {
   margin: 0 0 1rem;
   font-size: 1.25rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
 }
 
 .card-content {
   flex: 1;
-  color: #555;
+  color: white;
   font-size: 1rem;
   line-height: 1.5;
 }
 
 .card-footer {
   margin-top: 1rem;
+  font-size: 0.8rem;
   text-align: right;
+  color: white;
 }
 
 /* Varianten */

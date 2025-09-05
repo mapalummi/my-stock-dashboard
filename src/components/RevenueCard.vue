@@ -1,5 +1,5 @@
 <template>
-  <BaseCard :title="`Umsatz ${symbol}`" :variant="variant">
+  <BaseCard :title="`Test ${symbol}`" :variant="variant">
     <div v-if="loading">Lade...</div>
     <div v-else>{{ revenueFormatted }}</div>
     <template #footer>

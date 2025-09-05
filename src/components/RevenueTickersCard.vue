@@ -33,26 +33,35 @@ export default {
 .revenue-tickers-card {
   background: #023a6233;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 24px 32px;
   margin: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.revenue-tickers::-webkit-scrollbar {
+  display: none;
 }
 
 .card-content {
   flex: 1;
+  overflow: hidden;
 }
 
 .revenue-tickers {
   display: flex;
   gap: 16px;
+  overflow-y: hidden;
+  padding-bottom: 8px;
 }
 
 .revenue-tickers > :deep(.card) {
   flex: 1;
-  min-width: 150px;
+  min-width: 100px;
   background: #023a6233;
 }
 </style>
